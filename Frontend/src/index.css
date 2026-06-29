@@ -1,0 +1,76 @@
+
+*{
+    
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    text-align: center;
+    color: red;
+}
+
+body{
+    background-color: aquamarine;
+}
+
+.inputfiled{
+    display: flex;
+    flex-direction: column;
+     margin-bottom: 10px;
+}
+
+.inputfiled label{
+    width: 150px;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.829)
+}
+
+
+
+
+
+.inputfiled input{
+    padding: 5px;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: none;
+   
+
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 400px;
+    margin-top: 20px;
+}
+
+
+
+.register-btn{
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    margin-left: 30px;
+    background-color: green;
+  
+    color: white;
+    margin-top: 20px;
+    padding: 8px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    
+}
+
+
+
+
+
+
+
