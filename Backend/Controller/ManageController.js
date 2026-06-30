@@ -2,6 +2,8 @@ import EmpRegisterModel from "../Models/Empregister.js"
 
 import EmployerregisterModel from "../Models/Employerregister.js"
 
+import userSignup from "../Models/Usermodel.js"
+
 export const addEmployee = async (req, res) => {
   try {
     const { name, mobile,  role, companyname} = req.body;
@@ -179,5 +181,88 @@ export const deleteEmployer = async (req, res) => {
     res.json(users);
   } catch (err) {
     res.status(500).json(err);
+  }
+};
+
+
+
+export const addUser = async(req,res)=>{
+    try{
+        const { name,  email, password } = req.body;
+
+        if (!name ||  !email || !password ) {
+      return res.status(400).json({
+        success: false,
+        message: "All fields are required"
+      });
+    }
+
+   
+
+    // user detail checking with email
+
+    const detail = await userSignup.findOne({ email });
+
+    if (detail) {
+      return res.status(404).json({
+        success: false,
+        message: "user already exist"
+      });
+    }
+
+    
+   const user = await userSignup.create({
+        name,
+        email,
+        password,
+        
+    });
+     
+
+    res.status(201).json({
+        success:true,
+        id:user._id,
+    });
+    }
+    
+catch(err){
+console.log(err);
+}
+
+}
+
+export const loginuser =async(req,res)=>{
+  try{
+    const {email,password}=req.body;
+
+     const user = await userSignup.findOne({ email });
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "Email not found"
+      });
+    }
+
+    // Compare password
+    if (user.password !== password) {
+      return res.status(401).json({
+        success: false,
+        message: "Invalid password"
+      });
+    }
+
+    // Login successful
+    res.status(200).json({
+      success: true,
+      message: "Login successful",
+      user
+    });
+
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: err.message
+    });
   }
 };

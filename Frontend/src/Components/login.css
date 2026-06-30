@@ -1,0 +1,175 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+.auth-container{
+display:flex;
+height:100vh;
+}
+
+.left{
+width:50%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.left-content{
+color:black;
+}
+
+.left-content h2{
+margin-bottom:80px;
+font-style:italic;
+}
+
+.left-content span{
+color:#1a73e8;
+}
+
+.left-content h1{
+font-size:60px;
+font-style:italic;
+}
+
+.left-content p{
+font-size:35px;
+margin-top:20px;
+color:#ddd;
+font-style:italic;
+}
+
+.right{
+width:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#f7f7f7;
+}
+
+.card{
+width:380px;
+background:white;
+padding:35px;
+border-radius:10px;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.card h2{
+margin-bottom:20px;
+}
+
+.card label{
+display:block;
+margin-top:15px;
+margin-bottom:5px;
+}
+
+.card input{
+width:100%;
+height:45px;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+outline:none;
+}
+
+.password-box{
+display:flex;
+align-items:center;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.password-box input{
+border:none;
+flex:1;
+}
+
+.password-box svg{
+margin-right:15px;
+cursor:pointer;
+}
+
+button{
+width:100%;
+height:45px;
+margin-top:20px;
+border:none;
+background:#1a73e8;
+color:white;
+border-radius:5px;
+cursor:pointer;
+font-size:16px;
+}
+
+.google-btn{
+background:#eef4ff;
+color:#333;
+display:flex;
+justify-content:center;
+align-items:center;
+gap:10px;
+}
+
+.row{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-top:15px;
+}
+
+.row a{
+text-decoration:none;
+font-size:14px;
+color:#1a73e8;
+}
+
+.card p{
+text-align:center;
+margin-top:20px;
+}
+
+.card a{
+text-decoration:none;
+color:#1a73e8;
+font-weight:600;
+}
+
+@media(max-width:900px){
+
+.auth-container{
+flex-direction:column;
+}
+
+.left,
+.right{
+width:100%;
+}
+
+.left{
+height:40vh;
+}
+
+.right{
+height:60vh;
+}
+
+.card{
+width:90%;
+}
+
+.left-content h1{
+font-size:40px;
+}
+
+.left-content p{
+font-size:24px;
+}
+
+}
+

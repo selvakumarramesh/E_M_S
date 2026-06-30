@@ -13,7 +13,8 @@ function View() {
         style={{
           padding: "10px 20px",
           margin: "10px",
-          cursor: "pointer"
+          cursor: "pointer",
+          width:"110px"
         }}
       >
         Employee Register
@@ -24,7 +25,8 @@ function View() {
         style={{
           padding: "10px 20px",
           margin: "10px",
-          cursor: "pointer"
+          cursor: "pointer",
+          width:"110px"
         }}
       >
         Employer Register

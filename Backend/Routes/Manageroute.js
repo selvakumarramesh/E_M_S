@@ -1,5 +1,5 @@
  import express from "express";
-import { addEmployee, addEmployer, deleteEmployee, deleteEmployer, getEmployee, getEmployeeByCompany, getEmployer, updateEmployee, updateEmployer } from "../Controller/ManageController.js";
+import { addEmployee, addEmployer, addUser, deleteEmployee, deleteEmployer, getEmployee, getEmployeeByCompany, getEmployer, loginuser, updateEmployee, updateEmployer } from "../Controller/ManageController.js";
 
  const router = express.Router();
 
@@ -12,5 +12,8 @@ import { addEmployee, addEmployer, deleteEmployee, deleteEmployer, getEmployee, 
  router.route("/Employerregister/:id").patch(updateEmployer).delete(deleteEmployer)
 
  router.route("/Empregister/:companyname").get(getEmployeeByCompany)
+
+ router.route("/Signup").post(addUser);
+ router.route("/login").post(loginuser);
 
  export default router;

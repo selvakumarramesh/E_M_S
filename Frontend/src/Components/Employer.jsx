@@ -189,11 +189,12 @@ function Employer() {
         }
 
         <button
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/dashboard")}
         style={{
           padding: "10px 20px",
           margin: "10px",
-          cursor: "pointer"
+          cursor: "pointer",
+          width:"110px"
         }}
       >
         Dashboard

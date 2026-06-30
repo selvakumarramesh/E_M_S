@@ -108,19 +108,21 @@ alert("Employee created Sucessfully");
         onClick={() => navigate("/view")}
         style={{
           padding: "10px 20px",
-          margin: "10px",
-          cursor: "pointer"
+          margin: "10px ",
+          cursor: "pointer",
+          width:"110px"
         }}
       >
         Employee details
       </button>
 
       <button
-        onClick={() => navigate("/")}
+        onClick={() => navigate("/dashboard")}
         style={{
           padding: "10px 20px",
-          margin: "10px",
-          cursor: "pointer"
+          
+          cursor: "pointer",
+          width:"110px"
         }}
       >
         Dashboard
