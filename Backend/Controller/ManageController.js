@@ -25,8 +25,6 @@ export const addEmployee = async (req, res) => {
       });
     }
 
-   
-
 const employer = await EmployerregisterModel.findOne({companyname: companyname });
 
     if (!employer) {
@@ -41,15 +39,9 @@ const employer = await EmployerregisterModel.findOne({companyname: companyname }
       name,
       mobile,
       role,
+      companyname,
       employeeId: employer._id
     });
-
-    
-
-   
-
-    
-
     res.json({
         success: true,
         message: "Employee added successfully"
@@ -101,8 +93,9 @@ export const addEmployer = async (req, res) => {
 
 
 export const getEmployee = async(req,res)=>{
-    const employee=await EmpRegisterModel.find()
-    res.status(200).json({sucess:true,employee})
+   const employees = await EmpRegisterModel.find()
+    .populate("employeeId", "companyname");
+    res.status(200).json({sucess:true,employees})
     
 }
 
