@@ -10,10 +10,12 @@ import { FaEye } from "react-icons/fa";
 
 
 
+
 function Login() {
   const navigate = useNavigate();
   const[userData,setuserData]=useState({email:"",password:""})
-
+  
+ const [darkMode, setDarkMode] = useState(false);
     
 
     const handleChange =(e)=>{
@@ -42,7 +44,11 @@ function Login() {
             
         }
   return (
+
+    
     <div className="auth-container">
+
+       
 
       <div className="left">
 
@@ -50,7 +56,11 @@ function Login() {
 
 
 
-          <h1>Login Page</h1>
+        
+          <h1 >
+          Login Page
+          </h1>
+        
 
           
 
@@ -59,6 +69,10 @@ function Login() {
       </div>
 
       <div className="right">
+       
+
+        
+
 
         <div className="card">
 
@@ -87,8 +101,9 @@ function Login() {
         </div>
 
       </div>
+      </div>
 
-    </div>
+
   );
 }
 
