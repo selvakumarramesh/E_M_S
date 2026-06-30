@@ -12,7 +12,7 @@ function Employees() {
   
   const[isModelopen,setIsmodelopen]=useState(false);
   
-  const[userData,setUserdata]=useState({name:"",mobile:"",role:"",employeeId:""})
+  const[userData,setUserdata]=useState({name:"",mobile:"",role:"",companyname:""})
 
   const getAllusers = async () => {
   try {
@@ -20,7 +20,7 @@ function Employees() {
       "http://localhost:8000/api/Empregister"
     );
 
-    setUsers(res.data.employee);
+    setUsers(res.data.employees);
   } catch (error) {
     console.log(error);
   }
@@ -69,7 +69,7 @@ function Employees() {
 
 
     handlecloseModel();
-   setUserdata({name:"",mobile:"",role:"",employeeId:""});
+   setUserdata({name:"",mobile:"",role:"",companyname:""});
   }
 
   // close the model
@@ -111,7 +111,7 @@ function Employees() {
               <td>{user.name}</td>
               <td>{user.mobile}</td>
               <td>{user.role}</td>
-              <td>{user.employeeId}</td>
+              <td>{user.employeeId?.companyname}</td>
               <td><button className='btn green' onClick={()=>handleUpdaterecord(user)}>Edit</button></td>
               <td><button className="btn red" onClick={()=>handleDelete(user._id)}>Delete</button></td>
             </tr>)
@@ -144,7 +144,7 @@ function Employees() {
 
                <div className="input-group">
                 <label htmlFor="companyname">Company</label>
-                <input type="text" name='employeeId' value={userData.employeeId} id='employeeId' autoComplete="off" onChange={handleData}/>
+                <input type="text" name='companyname' value={userData.companyname} id='companyname' autoComplete="off" onChange={handleData}/>
               </div>
 
               <button className='btn green' onClick={handleSubmit}> Update user"</button>
