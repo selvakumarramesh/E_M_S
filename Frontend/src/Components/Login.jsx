@@ -62,7 +62,7 @@ function Login() {
         className="theme-toggle"
         onClick={() => setDarkMode(!darkMode)}
       >
-        {darkMode ? <FaSun /> : <FaMoon />}
+        {darkMode ? <FaMoon /> :<FaSun />}
       </button>
 
        

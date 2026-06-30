@@ -12,14 +12,14 @@ height:100vh;
 
 .left{
 width:50%;
-background-color: #121212;
+
 display:flex;
 justify-content:center;
 align-items:center;
 }
 
 .left-content{
-color:white;
+color:black;
 }
 
 .left-content h2{
