@@ -81,29 +81,17 @@ function RegisterEmployer() {
          </form>
        </div>
 
-       <button
-        onClick={() => navigate("/empview")}
-        style={{
-          padding: "10px 20px",
-          margin: "10px",
-          cursor: "pointer",
-          width:"100px"
-        }}
-      >
-        Employer view
-      </button>
+       <div className="button-group">
+  <button onClick={() => navigate("/empview")}>
+    Employer Details
+  </button>
 
-      <button
-        onClick={() => navigate("/dashboard")}
-        style={{
-          padding: "10px 20px",
-          margin: "10px",
-          cursor: "pointer",
-          width:"110px"
-        }}
-      >
-        Dashboard
-      </button>
+  <button onClick={() => navigate("/dashboard")}>
+    Dashboard
+  </button>
+</div>
+
+       
        </>
 )
 }

@@ -104,32 +104,18 @@ alert("Employee created Sucessfully");
       </form>
     </div>
 
-    <button
-        onClick={() => navigate("/view")}
-        style={{
-          padding: "10px 20px",
-          margin: "10px ",
-          cursor: "pointer",
-          width:"110px"
-        }}
-      >
-        Employee details
-      </button>
+    <div className="button-group">
+  <button onClick={() => navigate("/view")}>
+    Employee Details
+  </button>
 
-      <button
-        onClick={() => navigate("/dashboard")}
-        style={{
-          padding: "10px 20px",
-          
-          cursor: "pointer",
-          width:"110px"
-        }}
-      >
-        Dashboard
-      </button>
+  <button onClick={() => navigate("/dashboard")}>
+    Dashboard
+  </button>
+</div>
+
     </>
-    
-  )
+     )
 }
 
 export default RegisterEmployee

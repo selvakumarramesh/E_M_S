@@ -35,6 +35,8 @@ function View() {
     <div style={{ textAlign: "center", marginTop: "100px" }}>
       <h2>Select Registration Type</h2>
 
+      
+
       <button
         onClick={() => navigate("/register")}
         style={{

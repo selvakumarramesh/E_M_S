@@ -12,14 +12,14 @@ height:100vh;
 
 .left{
 width:50%;
-
+background-color: #121212;
 display:flex;
 justify-content:center;
 align-items:center;
 }
 
 .left-content{
-color:black;
+color:white;
 }
 
 .left-content h2{
@@ -107,14 +107,7 @@ cursor:pointer;
 font-size:16px;
 }
 
-.google-btn{
-background:#eef4ff;
-color:#333;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:10px;
-}
+
 
 .row{
 display:flex;
@@ -123,11 +116,7 @@ align-items:center;
 margin-top:15px;
 }
 
-.row a{
-text-decoration:none;
-font-size:14px;
-color:#1a73e8;
-}
+
 
 .card p{
 text-align:center;
@@ -171,5 +160,122 @@ font-size:40px;
 font-size:24px;
 }
 
+}
+
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: red;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  font-size: 20px;
+}
+
+
+
+
+
+.auth-container.dark .theme-toggle {
+  background: #333;
+  color: yellow;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background: red;
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  font-size: 20px;
+}
+
+
+
+   .auth-container.dark{
+  background: #121212;
+}
+
+
+.auth-container.dark .left {
+  background: #181818;
+}
+
+.auth-container.dark .left-content {
+  color: #fff;
+}
+
+.auth-container.dark .left-content h2 {
+  color: #fff;
+}
+
+.auth-container.dark .left-content h1 {
+  color: #fff;
+}
+
+.auth-container.dark .left-content p {
+  color: #bdbdbd;
+}
+
+
+.auth-container.dark .right {
+  background: #202124;
+}
+
+
+.auth-container.dark .card {
+  background: #2d2d2d;
+  color: white;
+  box-shadow: 0 10px 30px rgba(255,255,255,.08);
+}
+
+.auth-container.dark .card h2 {
+  color: white;
+}
+
+.auth-container.dark .card label {
+  color: white;
+}
+
+.auth-container.dark .card input {
+  background: #3b3b3b;
+  color: white;
+  border: 1px solid #555;
+}
+
+.auth-container.dark .card input::placeholder {
+  color: #bdbdbd;
+}
+
+
+.auth-container.dark .password-box {
+  background: #3b3b3b;
+  border: 1px solid #555;
+}
+
+.auth-container.dark .password-box svg {
+  color: white;
+}
+
+
+.auth-container.dark button {
+  background: #0d6efd;
+  color: white;
+}
+
+.auth-container.dark button:hover {
+  background: #0b5ed7;
+}
+
+
+.auth-container.dark a {
+  color: #4da3ff;
 }
 

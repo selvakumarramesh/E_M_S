@@ -1,11 +1,11 @@
 import "./login.css"
 
-import { useState } from "react"
+import { useState,useRef } from "react"
 import axios from "axios"
 
 
 import { Link, useNavigate  } from "react-router-dom";
-import { FaEye } from "react-icons/fa";
+import { FaEye ,FaMoon, FaSun } from "react-icons/fa";
 
 
 
@@ -13,9 +13,19 @@ import { FaEye } from "react-icons/fa";
 
 function Login() {
   const navigate = useNavigate();
+  const passwordRef = useRef();
   const[userData,setuserData]=useState({email:"",password:""})
+  const [darkMode, setDarkMode] = useState(false);
   
- const [darkMode, setDarkMode] = useState(false);
+ 
+
+ const showPassword = () => {
+    if (passwordRef.current.type === "password") {
+      passwordRef.current.type = "text";
+    } else {
+      passwordRef.current.type = "password";
+    }
+  };
     
 
     const handleChange =(e)=>{
@@ -31,7 +41,7 @@ function Login() {
             try{
                 const result = await axios.post("http://localhost:8000/api/login",userData);
 
-                alert("Signin Successfully");
+                alert("Login Successfully");
 
                 console.log(result.data);
 
@@ -46,7 +56,14 @@ function Login() {
   return (
 
     
-    <div className="auth-container">
+    <div className= {darkMode ? "auth-container dark" : "auth-container"}>
+
+      <button
+        className="theme-toggle"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        {darkMode ? <FaSun /> : <FaMoon />}
+      </button>
 
        
 
@@ -83,15 +100,15 @@ function Login() {
 
           <div className="row">
             <label>Password</label>
-            <a href="">Forgot?</a>
+            
           </div>
 
           <div className="password-box">
-            <input type="password" placeholder="Enter password" name="password" value={userData.password} onChange={handleChange} autoComplete="off"/>
-            <FaEye />
+            <input type="password" ref={passwordRef} placeholder="Enter password" name="password" value={userData.password} onChange={handleChange} autoComplete="off"/>
+            <FaEye onClick={showPassword}/>
           </div>
 
-          <button onClick={handleSubmit}>Login</button>
+          <button   onClick={handleSubmit}>Login</button>
 
           <p>
             Don't have an account?

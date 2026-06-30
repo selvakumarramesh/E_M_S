@@ -1,14 +1,23 @@
 import { Link , useNavigate} from "react-router-dom";
-import { FaEye } from "react-icons/fa";
-import { FcGoogle } from "react-icons/fc";
-import { useState } from "react"
+
+import { FaEye , FaMoon, FaSun } from "react-icons/fa";
+
+import { useState,useRef } from "react"
 import axios from "axios"
 
 function Registration() {
    const navigate = useNavigate();
+   const passwordRef = useRef();
   const[userData,setuserData]=useState({name:"",email:"",password:""})
+  const [darkMode, setDarkMode] = useState(false);
 
-    
+    const showPassword = () => {
+    if (passwordRef.current.type === "password") {
+      passwordRef.current.type = "text";
+    } else {
+      passwordRef.current.type = "password";
+    }
+  };
 
     const handleChange =(e)=>{
         
@@ -37,8 +46,13 @@ function Registration() {
         }
     
   return (
-    <div className="auth-container">
-
+    <div className= {darkMode ? "auth-container dark" : "auth-container"}>
+      <button
+        className="theme-toggle"
+        onClick={() => setDarkMode(!darkMode)}
+      >
+        {darkMode ? <FaSun /> : <FaMoon />}
+      </button>
       <div className="left">
 
         <div className="left-content">
@@ -68,16 +82,15 @@ function Registration() {
           <label>Password</label>
 
           <div className="password-box">
-            <input type="password" placeholder="Enter password" name="password" value={userData.password} onChange={handleChange } autoComplete="off"/>
-            <FaEye />
+            <input type= "password" ref={passwordRef} placeholder="Enter password" name="password" value={userData.password} onChange={handleChange } autoComplete="off"/>
+           <FaEye onClick={showPassword}/>
+  
+
           </div>
 
           <button onClick={handleSubmit}>Create Account</button>
 
-          <button className="google-btn">
-            <FcGoogle />
-            Continue with Google
-          </button>
+          
 
           <p>
             Already have an account?
