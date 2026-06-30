@@ -27,26 +27,35 @@ export const addEmployee = async (req, res) => {
 
    
 
+const employer = await EmployerregisterModel.findOne({companyname: companyname });
 
-    const user = await EmpRegisterModel.findOne({ mobile });
-
-    if (user) {
-      return res.json("Already Account created");
+    if (!employer) {
+        return res.status(404).json({
+            success: false,
+            message: "Company not found. Please enter a valid company name."
+        });
     }
+   
 
    const employee= await EmpRegisterModel.create({
       name,
       mobile,
       role,
-      companyname,
+      employeeId: employer._id
     });
 
-     res.status(201).json({
-      success: true,
-      id: employee._id
-      
-      
+    
+
+   
+
+    
+
+    res.json({
+        success: true,
+        message: "Employee added successfully"
     });
+
+    
   } catch (err) {
     res.status(500).json(err);
   }
