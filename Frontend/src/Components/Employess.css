@@ -42,20 +42,6 @@ h3{
     background-color: #e51313;
 }
 
-.input-search{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.input-search input{
-    width: 300px;
-    padding: 8px;
-    border-radius: 4px;
-    outline: none;
-    border: 1px solid #ccc;
-}
 
 .table{
     width: 100%;

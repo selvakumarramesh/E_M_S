@@ -4,7 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 function RegisterEmployee() {
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // creating the navigation object for useNavigate function
+
+  // creating the useState for manage the input value 
 
   const[user,setUser]=useState({
     name:"",
@@ -13,7 +15,11 @@ function RegisterEmployee() {
     companyname:""
   })
 
+  // object destructuring the input value to the variable
   const{name,mobile,role,companyname}=user;
+
+  // when the user input the value onchange event call this function from input box 
+  // assign the input value to the user variable by using setUser function
 
   const handleChange=(e)=>{
     setUser(
