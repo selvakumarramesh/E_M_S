@@ -4,7 +4,10 @@ const Empregisterschema = new mongoose.Schema({
     name:String,
     mobile:String,
     role:String,
-    companyname:String,
+    employeeId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Employerregister"
+    }
 })
 
 const EmpRegisterModel = mongoose.model("Empregister",Empregisterschema);
